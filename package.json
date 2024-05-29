@@ -1,0 +1,24 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "postinstall": "patch-package",
+    "build-apps": "tsup ./src/app-1/app1.ts --format esm --dts && tsup ./src/app-2/app2.ts --format esm --dts"
+  },
+  "devDependencies": {
+    "@wix/sdk-context": "file:src/__sdk-context",
+    "@wix/stores": "^1.0.149",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0",
+    "patch-package": "^8.0.0",
+    "tsup": "^8.0.2"
+  },
+  "dependencies": {
+    "@wix/sdk": "^1.9.6"
+  }
+}

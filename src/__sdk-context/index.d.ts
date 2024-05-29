@@ -1,0 +1,1 @@
+export declare function setAccessToken(accessToken: string): void;

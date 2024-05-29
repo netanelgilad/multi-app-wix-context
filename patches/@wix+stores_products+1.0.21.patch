@@ -1,0 +1,21 @@
+diff --git a/node_modules/@wix/stores_products/build/es/src/stores-catalog-v1-product-products.context.js b/node_modules/@wix/stores_products/build/es/src/stores-catalog-v1-product-products.context.js
+index 66b4928..1d83148 100644
+--- a/node_modules/@wix/stores_products/build/es/src/stores-catalog-v1-product-products.context.js
++++ b/node_modules/@wix/stores_products/build/es/src/stores-catalog-v1-product-products.context.js
+@@ -336,14 +336,9 @@ export const writeProxyDeleteProductPlatformized = (...args) => {
+         .initWixModules(publicWriteProxyDeleteProductPlatformized, args[1]?.supressAuth ? true : false)
+         .apply(undefined, args);
+ };
++import { wixContext } from '@wix/sdk-context';
+ export const queryProducts = (...args) => {
+-    const context = 
+-    // @ts-expect-error
+-    typeof $wixContext !== 'undefined'
+-        ? // @ts-expect-error
+-            $wixContext
+-        : // @ts-expect-error
+-            globalThis.__wix_context__;
++    const context = wixContext;
+     if (!context) {
+         throw new Error('Wix context is not available. Make sure to initialize the Wix context before using SDK modules');
+     }
