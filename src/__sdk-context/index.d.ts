@@ -1,1 +1,1 @@
-export declare function setAccessToken(accessToken: string): void;
+export declare const context;
